@@ -11,4 +11,8 @@
 5. 在上一步開啟的Game面板裡，將「Free Aspect」改成「Full HD (1920x1080)」
 6. 這樣的話，你就可以看到血條跟地下0層的指示文字在你的畫面裡了
 
+## 可能有用的文件
+
+- [Unity X Git](https://ithelp.ithome.com.tw/articles/10259552)
+
 [Youtube教學]: https://www.youtube.com/watch?v=nPW6tKeapsM
