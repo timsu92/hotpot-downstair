@@ -34,6 +34,7 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: ${{ matrix.targetPlatform }}
+          buildName: 火鍋下樓梯
       - name: Save built binaries
         uses: actions/upload-artifact@v3
         with:
