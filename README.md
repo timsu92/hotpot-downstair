@@ -4,6 +4,11 @@
 
 ## 怎麼用？
 
-> 請稍後，將由總機為您服務...
+1. `git clone`
+2. 用Unity 2021.3.12f1開啟。無法確保其他版本的開啟狀況
+3. 打開場景：打開Assets/Scenes/SampleScene.unity
+4. 「Window」->「Panels」->「2 Game」
+5. 在上一步開啟的Game面板裡，將「Free Aspect」改成「Full HD (1920x1080)」
+6. 這樣的話，你就可以看到血條跟地下0層的指示文字在你的畫面裡了
 
 [Youtube教學]: https://www.youtube.com/watch?v=nPW6tKeapsM
