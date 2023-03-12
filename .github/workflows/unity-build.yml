@@ -1,0 +1,41 @@
+name: Build Unity project
+on: [push, pull_request]
+
+jobs:
+  build-unity:
+    name: Build for ${{ matrix.targetPlatform }}
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        targetPlatform:
+          - StandaloneOSX # Build a macOS standalone (Intel 64-bit).
+          - StandaloneWindows # Build a Windows standalone.
+          - StandaloneWindows64 # Build a Windows 64-bit standalone.
+          - StandaloneLinux64 # Build a Linux 64-bit standalone.
+          - WebGL
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Cache Unity Library to speedup workflow
+        uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-hotpot-downstair-${{ matrix.targetPlatform }}
+          restore-keys: |
+            Library-hotpot-downstair-
+            Library-
+      - name: Build Unity project
+        id: unityBuild
+        uses: game-ci/unity-builder@v2
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: ${{ matrix.targetPlatform }}
+      - name: Save built binaries
+        uses: actions/upload-artifact@v3
+        with:
+          name: 火鍋下樓梯-${{ steps.unityBuild.outputs.buildVersion }}-${{ matrix.targetPlatform }}
+          path: build
