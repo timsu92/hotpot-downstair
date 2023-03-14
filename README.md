@@ -2,6 +2,8 @@
 
 這是一個Unity初學者依照[Youtube教學]所製作的遊戲，內容非常簡單，僅供教學使用，相關圖片、音效版權為原始擁有者所擁有，我並沒有相關檔案的所有權。
 
+![](https://github.com/timsu92/hotpot-downstair/workflows/Build%20Unity%20project/badge.svg?branch=main)
+
 ## 怎麼用？
 
 1. `git clone`
